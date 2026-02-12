@@ -1,0 +1,23 @@
+<div class="casino-table">
+  <h1>Craps</h1>
+  <h2>Your Wallet: $<%= @user.wallet %></h2>
+
+  <% if session[:point].nil? %>
+    <form action="/craps" method="get">
+      <label for="bet">Your Bet:</label>
+      <input type="number" name="bet" id="bet" min="1" max="<%= @user.wallet %>" required>
+      <button type="submit" class="roll-button">Place Bet and Roll</button>
+    </form>
+  <% else %>
+    <div class="dice-container">
+      <img src="/images/dice/<%= @die1 %>.svg" alt="Die 1" class="dice">
+      <img src="/images/dice/<%= @die2 %>.svg" alt="Die 2" class="dice">
+    </div>
+
+    <h2>Total: <%= @total %></h2>
+    <h3><%= @outcome %></h3>
+
+    <a href="/craps" class="roll-button">Roll again</a>
+  <% end %>
+</div>
+

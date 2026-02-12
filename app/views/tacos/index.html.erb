@@ -1,7 +1,5 @@
 <%
-  fillings = ["Pumpkins", "Ghost","Ghoullllssss"]
-
-
+  fillings = ["Pumpkins", "Ghost","Ghoullllssss","What do you think of my website"]
 %>
 
 <h1 style="color: Orange;">Haloween Tacos</h1></h1>
@@ -9,9 +7,9 @@
 
 
 <ul>
-  <li><%= fillings[0] %></li>
-  <li><%= fillings[1] %></li>
-  <li><%= fillings[2] %></li>
+  <% for filling in fillings %>
+    <li><%= filling %></li>
+    <% end %>
 </ul>
 
  

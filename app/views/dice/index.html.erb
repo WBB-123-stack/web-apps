@@ -1,0 +1,18 @@
+
+<div class="casino-floor">
+  <h1>Dice Tables</h1>
+  <a href="/dice" class="roll-button">Roll Again</a>
+  <div class="dice-tables-container">
+    <% @rolls.each_with_index do |roll, index| %>
+      <div class="casino-table small">
+        <h2>Table <%= index + 1 %></h2>
+        <div class="dice-container">
+          <img src="/images/dice/<%= roll[:die1] %>.svg" alt="Die 1" class="dice">
+          <img src="/images/dice/<%= roll[:die2] %>.svg" alt="Die 2" class="dice">
+        </div>
+        <h3>Total: <%= roll[:total] %></h3>
+      </div>
+    <% end %>
+  </div>
+</div>
+
